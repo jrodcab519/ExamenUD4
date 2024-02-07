@@ -8,11 +8,22 @@ public abstract class ProductoIVA extends Producto{
         this.iva = iva;
     }
 
+    public void setIva(double iva) {
+        this.iva = iva;
+    }
+
+    public ProductoIVA(String descripcion, double precioBruto) throws IllegalArgumentException {
+        super(descripcion, precioBruto);
+    }
 
     @Override
     public  double getPrecioNeto() {
-        double precioNeto = getPrecioBruto()*(1 + iva/100);
-        return precioNeto;
+
+        return getPrecioBruto()*(1 + getIva()/100);
+    }
+
+    public double getIva() {
+        return iva;
     }
 
     @Override
