@@ -2,6 +2,6 @@ package CestaCompra;
 
 public interface Comprable {
     boolean hayUnidades(int cantidad);
-    void cogerUnidad();
+    void cogerUnidad() throws NoHayExistenciasException;
     double getPrecioVenta();
 }

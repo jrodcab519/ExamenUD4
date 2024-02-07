@@ -1,11 +1,11 @@
 package CestaCompra;
 
-public class Suscripcion {
+public class Suscripcion implements Comprable{
     private String descripcion;
     private int existencias;
     private double precio;
 
-    public Suscripcion(String descripcion, int existencias, double precio) {
+    public Suscripcion(String descripcion, int existencias, double precio) throws IllegalArgumentException, NoHayExistenciasException{
         if(descripcion.isEmpty()){
             throw new IllegalArgumentException("La descripción no puede estar vacía.");
         }
@@ -30,5 +30,32 @@ public class Suscripcion {
         return precio;
     }
 
+    @Override
+    public String toString() {
+        return "Suscripcion{" +
+                "descripcion='" + getDescripcion() + '\'' +
+                ", existencias=" + getExistencias() +
+                ", precio=" + getPrecio() +
+                '}';
+    }
 
+    @Override
+    public boolean hayUnidades(int cantidad) {
+        if(cantidad < existencias){
+            return true;
+        }
+            return false;
+    }
+
+    @Override
+    public void cogerUnidad() throws NoHayExistenciasException{
+        if(existencias == 0){
+            throw new NoHayExistenciasException();
+        }
+    }
+
+    @Override
+    public double getPrecioVenta() {
+        return getPrecio();
+    }
 }
