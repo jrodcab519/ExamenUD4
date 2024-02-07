@@ -5,24 +5,35 @@ import java.util.List;
 
 public class CestaCompra {
     private double presupuesto;
-    List<Producto> objetos;
+    List<Suscripcion> objetos;
 
     public CestaCompra(double presupuesto) {
         this.presupuesto = presupuesto;
         objetos = new ArrayList<>();
     }
 
+
+    /* No recuerdo como agregar elementos
     void addElemento(String nombre){
-        objetos.add();
+        objetos.add(nombre);
     }
+    */
 
-    List<CestaCompra.Producto> getCesta(){
+   /*
+    List<Producto> getCesta(){
 
-        return objetos;
+        return List<>objetos;
     }
+    */
+
 
     double getPrecioCesta(){
 
-        return 0;
+        return getPrecioCesta();
+    }
+
+
+    public void imprimir() {
+        System.out.println("CESTA DE LA COMPRA " + " Pc Portátil:");
     }
 }
